@@ -35,5 +35,4 @@
 Well, the stars are all from myself...
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Ada-Church-Closure&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="Ada's Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ada-Church-Closure&layout=compact&theme=tokyonight&hide_border=true" alt="Top Langs" />
 </p>
