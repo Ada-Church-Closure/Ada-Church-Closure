@@ -25,8 +25,10 @@
 ![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 
-![ShardingSphere](https://img.shields.io/badge/Contributor-Apache%20ShardingSphere-E16223?style=for-the-badge&logo=apache&logoColor=white)
+### Contribute To
 
+![Valkey Contributor](https://img.shields.io/badge/Valkey-Contributor-003545?style=flat-square&logo=redis&logoColor=white)
+![ShardingSphere](https://img.shields.io/badge/Contributor-Apache%20ShardingSphere-E16223?style=for-the-badge&logo=apache&logoColor=white)
 ---
 
 ### 📊 GitHub Stats
