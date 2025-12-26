@@ -29,11 +29,3 @@
 
 ![Valkey](https://img.shields.io/badge/Valkey-Contributor-003545?style=for-the-badge&logo=redis&logoColor=white)
 ![ShardingSphere](https://img.shields.io/badge/Apache_ShardingSphere-Contributor-E16223?style=for-the-badge&logo=apache&logoColor=white)
-
----
-
-### GitHub Stats
-Well, the stars are all from myself...
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Ada-Church-Closure&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="Ada's Stats" />
-</p>
