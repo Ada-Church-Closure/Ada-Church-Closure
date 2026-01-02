@@ -20,6 +20,7 @@
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 
 ![DPDK](https://img.shields.io/badge/DPDK-%23420D53.svg?style=for-the-badge)
+![Netfilter](https://img.shields.io/badge/Netfilter-Queue-red?style=for-the-badge&logo=linux&logoColor=white)
 ![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
 ![Vim](https://img.shields.io/badge/Vim-%23019733.svg?style=for-the-badge&logo=vim&logoColor=white)
 ![GDB](https://img.shields.io/badge/GDB-%233F51B5.svg?style=for-the-badge&logo=gnu&logoColor=white)
