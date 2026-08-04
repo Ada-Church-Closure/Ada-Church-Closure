@@ -6,7 +6,7 @@
 
 > **Status**  : CS Undergrad.
 > 
-> **Focus**   : Infrastructure, Distributed Protocols, Redis/Valkey internals.
+> **Focus** : Systems Infrastructure, Distributed Protocols, and Low-Level Software/Hardware.
 > 
 > **Spoken**  : Fluent in English & Japanese.
 > 
