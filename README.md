@@ -24,6 +24,7 @@
 - [Raft Cluster: Implement Pre-Vote protocol to prevent term inflation](https://github.com/valkey-io/valkey/pull/3931) in **valkey-io/valkey**
 - [add/CVE-2026-25243 Invalid Memory Access in Redis RESTORE Command May Lead to Remote Code Execution](https://github.com/Unclecheng-li/poc-lab/pull/6) in **Unclecheng-li/poc-lab**
 - [add/CVE-2026-27623-valkey-dos](https://github.com/Unclecheng-li/poc-lab/pull/4) in **Unclecheng-li/poc-lab**
+- [Fix RDMA + IO threads re-entrancy and busy-loop via connection postpone masks](https://github.com/valkey-io/valkey/pull/3611) in **valkey-io/valkey**
 - [valkey-benchmark: centralize RDMA WRITABLE kick via createFileEvent](https://github.com/valkey-io/valkey/pull/3492) in **valkey-io/valkey**
 - [Fixes server crash when RDMA benchmark clients disconnect](https://github.com/valkey-io/valkey/pull/3448) in **valkey-io/valkey**
 - [Implement runtime dynamic loading for RDMA libraries](https://github.com/valkey-io/libvalkey/pull/284) in **valkey-io/libvalkey**
