@@ -14,6 +14,12 @@
 > 
 > **Contact** : Always open to technical communication.
 
+### Linux Kernel Work
+
+- [`rhashtable` / TP-BPF lockdep investigation](https://lore.kernel.org/all/20260803-fix-lock-tracepoint-bpf-lockdep-v1-1-91fb7afb526a@gmail.com/)
+  — Investigated a syzbot report, proposed an RFC, analyzed BPF locking contexts,
+  and validated the revised fix with `PROVE_LOCKING` and the reproducer.
+
 ### Recent Merged PRs
 
 <!-- BEGIN_RECENT_PRS -->
