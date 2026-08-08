@@ -24,6 +24,7 @@
 
 <!-- BEGIN_RECENT_PRS -->
 - [Fix RESP3 push frame torn apart on self-publish with copy avoidance](https://github.com/valkey-io/valkey/pull/4253) in **valkey-io/valkey**
+- [Fix/ready key blocked client uaf](https://github.com/valkey-io/valkey/pull/4212) in **valkey-io/valkey**
 - [Prevent double-free of the module timer when the callback stops it](https://github.com/valkey-io/valkey/pull/4211) in **valkey-io/valkey**
 - [Check and reject invalid slot import job names](https://github.com/valkey-io/valkey/pull/4210) in **valkey-io/valkey**
 - [tests/rdma: add valkey-benchmark --rdma stress for RDMA + IO threads](https://github.com/valkey-io/valkey/pull/4025) in **valkey-io/valkey**
