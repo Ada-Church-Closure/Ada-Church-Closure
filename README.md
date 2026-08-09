@@ -23,7 +23,6 @@
 ### Recent Merged PRs
 
 <!-- BEGIN_RECENT_PRS -->
-- [test](https://github.com/quanyeyang/PacketGhost/pull/2) in **quanyeyang/PacketGhost**
 - [Fix RESP3 push frame torn apart on self-publish with copy avoidance](https://github.com/valkey-io/valkey/pull/4253) in **valkey-io/valkey**
 - [Fix/ready key blocked client uaf](https://github.com/valkey-io/valkey/pull/4212) in **valkey-io/valkey**
 - [Prevent double-free of the module timer when the callback stops it](https://github.com/valkey-io/valkey/pull/4211) in **valkey-io/valkey**
