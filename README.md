@@ -23,6 +23,7 @@
 ### Recent Merged PRs
 
 <!-- BEGIN_RECENT_PRS -->
+- [Fix re-entry into processPendingCommandAndInputBuffer on blocked clients](https://github.com/valkey-io/valkey/pull/4376) in **valkey-io/valkey**
 - [Fix frozen monotonic clock on unsynchronised TSC hosts](https://github.com/valkey-io/valkey/pull/4346) in **valkey-io/valkey**
 - [Fix RESP3 push frame torn apart on self-publish with copy avoidance](https://github.com/valkey-io/valkey/pull/4253) in **valkey-io/valkey**
 - [Fix/ready key blocked client uaf](https://github.com/valkey-io/valkey/pull/4212) in **valkey-io/valkey**
