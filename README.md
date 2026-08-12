@@ -39,6 +39,7 @@
 - [Fix RDMA + IO threads re-entrancy and busy-loop via connection postpone masks](https://github.com/valkey-io/valkey/pull/3611) in **valkey-io/valkey**
 - [valkey-benchmark: centralize RDMA WRITABLE kick via createFileEvent](https://github.com/valkey-io/valkey/pull/3492) in **valkey-io/valkey**
 - [Fixes server crash when RDMA benchmark clients disconnect](https://github.com/valkey-io/valkey/pull/3448) in **valkey-io/valkey**
+- [Fix RDMA + IO threads re-entrancy via connection postpone masks (9.0)](https://github.com/valkey-io/valkey/pull/3335) in **valkey-io/valkey**
 - [Implement runtime dynamic loading for RDMA libraries](https://github.com/valkey-io/libvalkey/pull/284) in **valkey-io/libvalkey**
 - [Lazy loading of RDMA libs in CLI/Benchmark when building as module](https://github.com/valkey-io/valkey/pull/3072) in **valkey-io/valkey**
 - [enforce 64‑bit off_t regardless of include order; prevent LTO type mismatch (Fixes #2938)](https://github.com/valkey-io/valkey/pull/2943) in **valkey-io/valkey**
