@@ -30,6 +30,7 @@
 - [Fix/ready key blocked client uaf](https://github.com/valkey-io/valkey/pull/4212) in **valkey-io/valkey**
 - [Prevent double-free of the module timer when the callback stops it](https://github.com/valkey-io/valkey/pull/4211) in **valkey-io/valkey**
 - [Check and reject invalid slot import job names](https://github.com/valkey-io/valkey/pull/4210) in **valkey-io/valkey**
+- [Raft Cluster: Implement Non-voting Members](https://github.com/valkey-io/valkey/pull/4094) in **valkey-io/valkey**
 - [tests/rdma: add valkey-benchmark --rdma stress for RDMA + IO threads](https://github.com/valkey-io/valkey/pull/4025) in **valkey-io/valkey**
 - [[llvm-exegesis] Add did-you-mean hint for unknown opcodes](https://github.com/llvm/llvm-project/pull/203463) in **llvm/llvm-project**
 - [Raft Cluster: Implement Pre-Vote protocol to prevent term inflation](https://github.com/valkey-io/valkey/pull/3931) in **valkey-io/valkey**
