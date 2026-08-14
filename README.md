@@ -23,6 +23,7 @@
 ### Recent Merged PRs
 
 <!-- BEGIN_RECENT_PRS -->
+- [Skip IO-thread read-done followup unless update_state sync-invokes handlers](https://github.com/valkey-io/valkey/pull/4401) in **valkey-io/valkey**
 - [Fix re-entry into processPendingCommandAndInputBuffer on blocked clients](https://github.com/valkey-io/valkey/pull/4376) in **valkey-io/valkey**
 - [Fix frozen monotonic clock on unsynchronised TSC hosts](https://github.com/valkey-io/valkey/pull/4346) in **valkey-io/valkey**
 - [Fix slow-clocksource check for HW monotonic clock and non-x86 advisories](https://github.com/valkey-io/valkey/pull/4272) in **valkey-io/valkey**
