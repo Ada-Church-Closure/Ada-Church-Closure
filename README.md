@@ -4,15 +4,15 @@
   </a>
 </p>
 
-> **Status**  : CS Undergrad.
-> 
-> **Focus** : Systems Infrastructure, Distributed Protocols, and Low-Level Software/Hardware.
-> 
-> **Spoken**  : Fluent in English & Japanese.
-> 
-> **Ethos**   : Play the long game. Do the hard, right things.
-> 
-> **Contact** : Always open to technical communication.
+**Status**  : CS Undergrad · Member of @valkey-io
+
+**Focus** : Systems Infrastructure, Distributed Protocols, and Low-Level Software/Hardware.
+
+**Spoken**  : Fluent in English & Japanese.
+
+**Ethos**   : Play the long game. Do the hard, right things.
+
+**Contact** : Always open to technical communication.
 
 ### Linux Kernel Work
 
