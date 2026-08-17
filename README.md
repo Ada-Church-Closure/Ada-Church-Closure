@@ -4,15 +4,13 @@
   </a>
 </p>
 
-**Status**  : CS Undergrad · Member of @valkey-io
+**Status**  : CS Undergrad · Member of [valkey-io](https://github.com/valkey-io).
 
 **Focus** : Systems Infrastructure, Distributed Protocols, and Low-Level Software/Hardware.
 
-**Spoken**  : Fluent in English & Japanese.
+**Spoken**  : Fluent in English & Japanese, I love learning different languages.
 
 **Ethos**   : Play the long game. Do the hard, right things.
-
-**Contact** : Always open to technical communication.
 
 ### Linux Kernel Work
 
