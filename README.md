@@ -21,6 +21,7 @@
 ### Recent Merged PRs
 
 <!-- BEGIN_RECENT_PRS -->
+- [Fix flaky multi-part AOF manifest tests](https://github.com/valkey-io/valkey/pull/4491) in **valkey-io/valkey**
 - [Skip IO-thread write-done client re-lookup unless update_state sync-invokes handlers (9.0)](https://github.com/valkey-io/valkey/pull/4452) in **valkey-io/valkey**
 - [Skip IO-thread read-done followup unless update_state sync-invokes handlers (9.0)](https://github.com/valkey-io/valkey/pull/4414) in **valkey-io/valkey**
 - [Skip IO-thread read-done followup unless update_state sync-invokes handlers](https://github.com/valkey-io/valkey/pull/4401) in **valkey-io/valkey**
