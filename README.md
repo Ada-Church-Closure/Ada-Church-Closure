@@ -14,6 +14,7 @@
 
 ### Linux Kernel Work
 
+- [`bpf: Annotate bpf_obj_memcpy with data_race`](https://lore.kernel.org/bpf/20260822-bpf-kcsan-obj-memcpy-v3-1-4227b2edd8b4@proton.me/) — Addressed a syzbot KCSAN report by annotating intentional concurrent writes in lockless BPF map-value updates, documenting the existing torn-value semantics and suppressing expected race reports without adding synchronization. Merged into [`bpf-next`](https://git.kernel.org/bpf/bpf-next/c/5e289c5a4a52).
 - [`rhashtable` / TP-BPF lockdep investigation and test](https://lore.kernel.org/all/20260803-fix-lock-tracepoint-bpf-lockdep-v1-1-91fb7afb526a@gmail.com/)
   — Investigated a syzbot report, proposed an RFC, analyzed BPF locking contexts,
   and validated the revised fix with `PROVE_LOCKING` and the reproducer.
@@ -49,5 +50,6 @@
 <!-- END_RECENT_PRS -->
 
 ![Valkey](https://img.shields.io/badge/Valkey-Contributor-003545?style=for-the-badge&logo=redis&logoColor=white)
+[![Linux Kernel Contributor](https://img.shields.io/badge/Linux_Kernel-Contributor-FCC624?style=for-the-badge&logo=linux&logoColor=black)]
 ![LLVM](https://img.shields.io/badge/LLVM-Contributor-000000?style=for-the-badge&logo=llvm&logoColor=white)
 ![ShardingSphere](https://img.shields.io/badge/Apache_ShardingSphere-Contributor-E16223?style=for-the-badge&logo=apache&logoColor=white)
