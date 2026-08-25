@@ -51,7 +51,7 @@
 
 ![Valkey](https://img.shields.io/badge/Valkey-Contributor-003545?style=for-the-badge&logo=redis&logoColor=white)
 
-![Linux Kernel Contributor](https://img.shields.io/badge/Linux_Kernel-Contributor-FCC624?style=for-the-badge&logo=linux&logoColor=white)
+![Linux Kernel Contributor](https://img.shields.io/badge/Linux_Kernel-Contributor-E16223?style=for-the-badge&logo=linux&logoColor=white)
 
 ![LLVM](https://img.shields.io/badge/LLVM-Contributor-000000?style=for-the-badge&logo=llvm&logoColor=white)
 
