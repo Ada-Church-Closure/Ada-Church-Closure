@@ -14,7 +14,7 @@
 
 ### Linux Kernel Work
 
-- [`bpf: Annotate bpf_obj_memcpy with data_race`](https://lore.kernel.org/bpf/20260822-bpf-kcsan-obj-memcpy-v3-1-4227b2edd8b4@proton.me/) — Addressed a syzbot KCSAN report by annotating intentional concurrent writes in lockless BPF map-value updates.Merged into [`bpf-next`](https://git.kernel.org/bpf/bpf-next/c/5e289c5a4a52).
+- [`bpf: Annotate bpf_obj_memcpy with data_race`](https://lore.kernel.org/bpf/20260822-bpf-kcsan-obj-memcpy-v3-1-4227b2edd8b4@proton.me/) — Addressed a syzbot KCSAN report by annotating intentional concurrent writes in lockless BPF map-value updates. **Merged into [`bpf-next`](https://git.kernel.org/bpf/bpf-next/c/5e289c5a4a52)**.
 - [`rhashtable` / `TP-BPF lockdep investigation and test`](https://lore.kernel.org/all/20260803-fix-lock-tracepoint-bpf-lockdep-v1-1-91fb7afb526a@gmail.com/)
   — Investigated a syzbot report, proposed an RFC, analyzed BPF locking contexts,
   and validated the revised fix with `PROVE_LOCKING` and the reproducer.
