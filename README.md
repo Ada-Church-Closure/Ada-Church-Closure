@@ -54,6 +54,8 @@
 
 ![Linux Kernel Contributor](https://img.shields.io/badge/Linux_Kernel-Contributor-E5A50A?style=for-the-badge&logo=linux&logoColor=white)
 
+![systemd](https://img.shields.io/badge/systemd-Contributor-0086D1?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MyAxMyI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMHYxM2g1di0ySDJWMmgzVjB6bTM4IDB2MmgzdjloLTN2Mmg1VjB6Ii8+PGNpcmNsZSBmaWxsPSIjZmZmIiBjeD0iMTUuNSIgY3k9IjYuNSIgcj0iNC41Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0ibTI0IDYuNSA4LTQuNXY5eiIvPjwvc3ZnPg==)
+
 ![LLVM](https://img.shields.io/badge/LLVM-Contributor-000000?style=for-the-badge&logo=llvm&logoColor=white)
 
 ![ShardingSphere](https://img.shields.io/badge/Apache_ShardingSphere-Contributor-E16223?style=for-the-badge&logo=apache&logoColor=white)
