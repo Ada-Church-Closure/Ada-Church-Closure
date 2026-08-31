@@ -22,6 +22,7 @@
 ### Recent Merged PRs
 
 <!-- BEGIN_RECENT_PRS -->
+- [Fix RDMA UAF: connection freed inside callHandler](https://github.com/valkey-io/valkey/pull/4534) in **valkey-io/valkey**
 - [repart: Keep new partitions after existing same-type partitions](https://github.com/systemd/systemd/pull/43470) in **systemd/systemd**
 - [Fix flaky multi-part AOF manifest tests](https://github.com/valkey-io/valkey/pull/4491) in **valkey-io/valkey**
 - [Skip IO-thread write-done client re-lookup unless update_state sync-invokes handlers (9.0)](https://github.com/valkey-io/valkey/pull/4452) in **valkey-io/valkey**
