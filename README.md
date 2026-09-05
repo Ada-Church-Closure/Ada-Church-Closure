@@ -5,8 +5,6 @@ I'm a Computer Science undergraduate at **Xi'an Jiaotong University**, a member 
 
 I work on **RDMA networking, database internals, and distributed protocols**, with a particular interest in concurrency, resource lifetimes, and the behavior of systems under failure.
 
-**Currently:** deepening my work in Linux RDMA and MPTCP, and exploring adaptive receive-buffer sizing for Valkey's RDMA transport.
-
 [Website](https://quanyeyang.github.io/) · [LinkedIn](https://www.linkedin.com/in/quanyeyang/) · [Email](mailto:quanyeyang@proton.me)
 
 ## Valkey & libvalkey
