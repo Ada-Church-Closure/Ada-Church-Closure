@@ -88,7 +88,7 @@ Also contributed a proposal and follow-up discussion on userspace MPTCP path-man
 
 ---
 
-I speak Chinese, English, and Japanese, and enjoy learning languages.
+**I speak Chinese, English, Japanese and a little German, and enjoy learning languages.**
 
 *Play the long game. Do the hard, right things.*
 
