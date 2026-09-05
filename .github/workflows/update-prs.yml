@@ -2,37 +2,176 @@ name: Update Recent Merged PRs
 
 on:
   schedule:
+    # 00:00 UTC / 08:00 Asia/Shanghai.
     - cron: '0 0 * * *'
   workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-profile-readme
+  cancel-in-progress: false
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
 
-      - name: Fetch PRs and Update README
+      - name: Fetch merged PRs and update README
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_LOGIN: quanyeyang
+          PR_LIMIT: '30'
         run: |
-          gh search prs --author quanyeyang --merged --limit 100 \
-            --json title,url,repository \
-            --jq '.[] 
-              | select(.repository.nameWithOwner | startswith("quanyeyang/") | not)
-              | "- [\(.title)](\(.url)) in **\(.repository.nameWithOwner)**"' \
-            | head -n 30 > prs.txt
+          python3 - <<'PY'
+          import html
+          import json
+          import os
+          import subprocess
+          import tempfile
+          from datetime import datetime
+          from pathlib import Path
 
-          awk '/<!-- BEGIN_RECENT_PRS -->/{print; system("cat prs.txt"); f=1; next} /<!-- END_RECENT_PRS -->/{f=0} !f' README.md > temp.md
-          mv temp.md README.md
+          BEGIN = "<!-- BEGIN_RECENT_PRS -->"
+          END = "<!-- END_RECENT_PRS -->"
+          QUERY = """
+          query($login: String!, $endCursor: String) {
+            user(login: $login) {
+              pullRequests(first: 100, states: MERGED, after: $endCursor) {
+                totalCount
+                pageInfo { hasNextPage endCursor }
+                nodes {
+                  title
+                  url
+                  mergedAt
+                  repository {
+                    nameWithOwner
+                    isPrivate
+                    owner { login }
+                  }
+                }
+              }
+            }
+          }
+          """
 
-      - name: Commit and Push changes
+          def markdown_text(value):
+              value = html.escape(" ".join(value.split()), quote=False)
+              special = set("\\*_{}[]()!|" + chr(96))
+              return "".join("\\" + ch if ch in special else ch for ch in value)
+
+          def update_readme():
+              path = Path("README.md")
+              original = path.read_text(encoding="utf-8")
+              for marker in (BEGIN, END):
+                  if original.count(marker) != 1 or marker not in original.splitlines():
+                      raise ValueError(f"Expected exactly one standalone {marker}")
+              if original.index(BEGIN) >= original.index(END):
+                  raise ValueError("README markers are in the wrong order")
+              before, rest = original.split(BEGIN, 1)
+              _, after = rest.split(END, 1)
+
+              login = os.environ["PROFILE_LOGIN"]
+              limit = int(os.environ.get("PR_LIMIT", "30"))
+              if limit < 1:
+                  raise ValueError("PR_LIMIT must be positive")
+
+              # Fetch every page before selecting by actual merge time.
+              result = subprocess.run(
+                  [
+                      "gh", "api", "graphql", "--hostname", "github.com",
+                      "--paginate", "--slurp",
+                      "-f", f"login={login}",
+                      "-f", f"query={QUERY}",
+                  ],
+                  check=True,
+                  stdout=subprocess.PIPE,
+                  text=True,
+                  timeout=300,
+              )
+              pages = json.loads(result.stdout)
+              if not isinstance(pages, list) or not pages:
+                  raise ValueError("GitHub returned no result pages")
+
+              all_prs = {}
+              counts = set()
+              for page in pages:
+                  if page.get("errors"):
+                      raise ValueError(f"GraphQL query failed: {page['errors']}")
+                  connection = page["data"]["user"]["pullRequests"]
+                  counts.add(connection["totalCount"])
+                  for pr in connection["nodes"]:
+                      if not pr or not pr["mergedAt"]:
+                          raise ValueError("GitHub returned an incomplete PR record")
+                      all_prs[pr["url"]] = pr
+              if counts != {len(all_prs)}:
+                  raise ValueError("PR pagination was incomplete or changed; retry later")
+              if pages[-1]["data"]["user"]["pullRequests"]["pageInfo"]["hasNextPage"]:
+                  raise ValueError("GitHub returned a truncated final page")
+
+              prs = [
+                  pr for pr in all_prs.values()
+                  if not pr["repository"]["isPrivate"]
+                  and pr["repository"]["owner"]["login"].casefold() != login.casefold()
+              ]
+              prs.sort(
+                  key=lambda pr: (
+                      datetime.fromisoformat(pr["mergedAt"].replace("Z", "+00:00")),
+                      pr["url"],
+                  ),
+                  reverse=True,
+              )
+              prs = prs[:limit]
+              if not prs:
+                  raise ValueError("No public upstream PRs returned; keeping the README")
+
+              lines = [
+                  f"- {pr['mergedAt'][:10]} · [{markdown_text(pr['title'])}]"
+                  f"({pr['url']}) in **{markdown_text(pr['repository']['nameWithOwner'])}**"
+                  for pr in prs
+              ]
+              updated = before + BEGIN + "\n" + "\n".join(lines) + "\n" + END + after
+              if updated == original:
+                  print("README is already up to date.")
+                  return
+
+              # Write only after validating the API data and both markers.
+              with tempfile.NamedTemporaryFile(
+                  mode="w", encoding="utf-8", dir=path.parent,
+                  prefix=".readme-update-", delete=False,
+              ) as temporary:
+                  temporary.write(updated)
+                  temporary_path = Path(temporary.name)
+              try:
+                  temporary_path.chmod(path.stat().st_mode & 0o777)
+                  temporary_path.replace(path)
+              finally:
+                  temporary_path.unlink(missing_ok=True)
+              print(f"Updated {len(prs)} merged PRs.")
+
+          update_readme()
+          PY
+
+      - name: Commit and push changes
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
+          if git diff --quiet -- README.md; then
+            echo "No README changes to commit."
+            exit 0
+          fi
+
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add README.md
-
-          git diff --quiet && git diff --staged --quiet || \
-            (git commit -m "docs: auto update recent PRs" && git push)
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- README.md
+          git commit -m "docs: update recent merged PRs"
+          git pull --rebase origin "$DEFAULT_BRANCH"
+          git push origin "HEAD:$DEFAULT_BRANCH"
